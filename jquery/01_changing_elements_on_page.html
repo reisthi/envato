@@ -1,0 +1,25 @@
+<html>
+  <head>
+    <title></title>
+  </head>
+  <body>
+    <ul>
+      <li>hello</li>
+      <li>hello 2</li>
+      <li>hello 3</li>
+    </ul>
+    <script src="jquery-3.4.1.js"></script>
+    <script>
+      // get items inside body
+      var lis = jQuery("ul li");
+      console.log(lis);
+      // change color
+      jQuery("ul li").css("color", "pink");
+      // add a class
+      jQuery("ul li").addClass("my-new-class");
+      // jQuery("ul li").addClass("my-new-class");
+      // is identical to
+      // $("ul li").addClass("my-new-class");
+    </script>
+  </body>
+</html>

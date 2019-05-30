@@ -1,0 +1,36 @@
+<!---->
+<html>
+  <head>
+    <title></title>
+    <style>
+      .emphasis {
+        font-weight: bold;
+      }
+    </style>
+    <!-- This will not work becasuse page is not ready yet -->
+    <script>
+      $("li:first-child").addClass("emphasis");
+    </script>
+    <!-- lets make it work this way -->
+    <script>
+      // this is called anonymous function
+      $(document).ready(function() {
+        $("li:first-child").addClass("emphasis");
+      });
+    </script>
+  </head>
+  <body>
+    <ul>
+      <li>hello</li>
+      <li>hello 2</li>
+      <li>hello 3</li>
+      <li>
+        <
+      </li>
+    </ul>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script>
+      $("ul.emphasis").$("");
+    </script>
+  </body>
+</html>
