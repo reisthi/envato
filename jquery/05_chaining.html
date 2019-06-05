@@ -1,0 +1,36 @@
+<!---->
+<html>
+  <head>
+    <title>Hey we are learning chaining with jQuery!</title>
+    <style>
+      .textGreen {
+        color: green;
+      }
+    </style>
+  </head>
+  <body>
+    <h3>Chaining with jQuery!</h3>
+    <ul class="emphasis">
+      <li>hello</li>
+      <li>hello 2</li>
+      <li>hello 3</li>
+      <ul>
+        <li>hello from the nest.</li>
+      </ul>
+      <li>hello 4</li>
+      <li>hello 5</li>
+    </ul>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script>
+      $("ul.emphasis")
+        .children("li")
+        .first()
+        .addClass("textGreen");
+    </script>
+    <script>
+      $("ul.emphasis li:nth-child(3)").text(
+        "hello, this was inserted with jQuery"
+      );
+    </script>
+  </body>
+</html>
