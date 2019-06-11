@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset=utf-8>
+    <title>Modifying Effect Speeds</title>
+</head>
+
+<body>
+    <h1>Modifying Effect Speeds</h1>
+    <p><i>In this class we'll manage to display a text whenever the h1 tag is clicked.</i></p>
+    <h2>Check console.log for more info about speeds.</h2>
+    <p>Defaults: {slow: 600, fast: 200, _default: 400}</p>
+    <p>Custom: {slow: 600, fast: 200, _default: 400, customSpeed: 6000}</p>
+    <h3 class='slow'>Reveal Slow</h1>
+        <div class='content'>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic quis animi quos obcaecati fugit facilis
+                excepturi voluptas, nobis reiciendis rerum, sequi expedita eaque adipisci saepe sapiente tempore non
+                illo
+                maxime!
+            </p>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus harum culpa blanditiis fuga sequi
+                recusandae
+                aliquid distinctio molestiae nulla laboriosam animi, fugiat exercitationem tenetur, id veniam
+                voluptatibus
+                est
+                repudiandae illum.
+            </p>
+        </div>
+        <h3 class='fast'>Reveal Fast</h1>
+            <div class='content'>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic quis animi quos obcaecati fugit facilis
+                    excepturi voluptas, nobis reiciendis rerum, sequi expedita eaque adipisci saepe sapiente tempore non
+                    illo
+                    maxime!
+                </p>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus harum culpa blanditiis fuga
+                    sequi
+                    recusandae
+                    aliquid distinctio molestiae nulla laboriosam animi, fugiat exercitationem tenetur, id veniam
+                    voluptatibus
+                    est
+                    repudiandae illum.
+                </p>
+            </div>
+            <h3 class='custom'>Reveal Custom</h1>
+                <div class='content'>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic quis animi quos obcaecati fugit
+                        facilis
+                        excepturi voluptas, nobis reiciendis rerum, sequi expedita eaque adipisci saepe sapiente tempore
+                        non
+                        illo
+                        maxime!
+                    </p>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus harum culpa blanditiis fuga
+                        sequi
+                        recusandae
+                        aliquid distinctio molestiae nulla laboriosam animi, fugiat exercitationem tenetur, id veniam
+                        voluptatibus
+                        est
+                        repudiandae illum.
+                    </p>
+                </div>
+                <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+                <script>
+                    $('div.content').hide();
+                    $('h3.slow').on('click', function () {
+                        $(this).next().slideDown('slow');
+                    })
+                    $('h3.fast').on('click', function () {
+                        $(this).next().slideDown('fast');
+                    })
+                    $.fx.speeds.customSpeed = 6000;
+                    $('h3.custom').on('click', function () {
+                        $(this).next().slideDown('customSpeed');
+                    })
+                    console.log($.fx.speeds);
+                </script>
+</body>
+
+</html>
