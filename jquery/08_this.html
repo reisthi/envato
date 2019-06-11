@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta cahrset=utf-8>
+    <title>The This Keyword</title>
+</head>
+
+<body>
+    <a href="#">Click me to see what happens...</a>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script>
+        // console.log(this);
+        $('a').on('click', doSomething);
+        function doSomething() {
+            console.log(this);
+        }
+    </script>
+</body>
+
+</html>
