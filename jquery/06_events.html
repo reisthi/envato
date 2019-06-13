@@ -1,0 +1,39 @@
+<!---->
+<html>
+  <head>
+    <title>jQuery Events</title>
+    <link rel="stylesheet" href="06_events_day.css" />
+  </head>
+  <body>
+    <h3>Dealing with jQuery Events</h3>
+    <p>We will be using jQuery events to change the stylesheet of the page.</p>
+    <button data-css-file="06_events_day">Button Day</button>
+    <button data-css-file="06_events_night">Button Night</button>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script>
+      // let's create a function that is automatically triggered when the page loads
+      (function() {
+        $("button").hover(function() {
+          // console.log(this);
+          // console.log("'this' refers to the target!");
+        });
+      })();
+    </script>
+    <script>
+      // This is kind of a manual toggle?
+      var link = $("link"); // set the element as a variable
+      (function() {
+        $("button").click(function() {
+          var $this = $(this); // easy way to have access to the jQuery methods in the template
+          var stylesheet = $(this).data("css-file"); // get the custom attr on the button
+          $(this)
+            .siblings("button")
+            .removeAttr("disabled"); // siblings refer
+          link.attr("href", stylesheet + ".css"); // use the data from the attr to switch in between css stylesheets
+          $this.attr("disabled", "disabled"); // disable button after it is clicked
+        });
+      })();
+    </script>
+  </body>
+</html>

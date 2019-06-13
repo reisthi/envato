@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Appending and Creating Content</title>
+  </head>
+  <body>
+    <h1>My Awesome Website</h1>
+    <article>
+      <h2>My article</h2>
+      <h5><i>This is just a subtitle...</i></h5>
+      <p>
+        Lorem ipsum, audift sit ametr, consectetur adispisig elit, sed do
+        wiusmod
+      </p>
+      <p>
+        Lorem ipsum, dolor sit ametr, consectetur adispisig elit, sed do magna
+      </p>
+      <span>This is just a span. Isn't it? </span><br />
+    </article>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script>
+      (function() {
+        $("article").append("This will go in the end of article");
+        $("article").prepend("This will go in the beginning of article");
+        $("<h4></h4>", {
+          text:
+            "This was inserted mannually by creating a tag first and then adding text and class to it.",
+          class: "myClass"
+        }).appendTo("article");
+        $("<h4></h4>", {
+          text: "Use insertAfter to add this after a selected element.",
+          class: "myClass"
+        }).insertAfter("h1");
+        // This will move h1 from the top and append it to the end
+        $("h5").appendTo("article");
+        $("article")
+          .find("span")
+          .append("I used find to find this lol");
+      })();
+    </script>
+  </body>
+</html>
