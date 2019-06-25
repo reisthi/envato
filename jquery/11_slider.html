@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="11_slider.css" />
+    <title>Slider</title>
+    <style>
+      body {
+        width: 1000px;
+        margin: 50px auto 0;
+      }
+      * {
+        margin: 0;
+        padding: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="slider">
+      <ul>
+        <li>
+          <img
+            src="imgs/greece.jpg"
+            alt="image"
+            width="1000px"
+            height="600px"
+          />
+        </li>
+        <li>
+          <img src="imgs/flag.jpg" alt="image" width="1000px" height="600px" />
+        </li>
+        <li>
+          <img
+            src="imgs/circle.jpg"
+            alt="image"
+            width="1000px"
+            height="600px"
+          />
+        </li>
+      </ul>
+    </div>
+    <div id="slider-nav">
+      <button data-dir="prev">Previous</button>
+      <button data-dir="next">Next</button>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="11_slider.js"></script>
+  </body>
+</html>
