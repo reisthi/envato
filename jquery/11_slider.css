@@ -1,12 +1,18 @@
 #slider-nav {
   /* display: none; */
-  margin-top: 1em;
+  margin: 1em auto 0;
+  width: 30%;
 }
 #slider-nav button {
   padding: 1em;
   margin-right: 1em;
   border-radius: 10px;
   cursor: pointer;
+  width: 100px;
+  background-color: lightgray;
+  color: white;
+  font-size: 14px;
+  font-weight: 400;
 }
 
 .slider {
