@@ -34,18 +34,17 @@
           }
         ],
         // lets use html() method to extract the content and .trim() to get rid of white spaces
-        template = $.trim( $('#blogTemplate').html() );
-        // use each method to filter through an element
-
-          // console.log($.each( content, function() {}));
+        template = $.trim( $('#blogTemplate').html() ),
+        frag = '';
+        // use each method to filter through an array or object
           $.each(content, function( index, obj){
             // lets replace with regular expressions i=lower and upper case letters g=global 
-            var temp = template.replace( /{{ title }}/ig, obj.title )
+            frag += template.replace( /{{ title }}/ig, obj.title )
                 .replace(/{{ thumbnail }}/ig, obj.thumbnail );
-            // now let's add it to the page
-            $(document.body).append(temp);
 
           })
+          // now let's add it to the page
+          $('body').append(frag);
       })();
     </script>
   </body>
