@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Each and Templating</title>
+  </head>
+  <body>
+    <h1>Each and Templating with jQuery</h1>
+    <p>
+      In this lesson we will learn how to insert elements into the page using
+      jQuery.
+    </p>
+    
+    <script id=blogTemplate type=tuts/template>
+        <h2>{{ title }}</h2>
+        <img src={{ thumbnail }} alt={{ title }}>
+    </script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    <script>
+      (function() {
+          // this is the content to be inserted
+        var content = [
+          {
+            title: "My awesome blog post",
+            thumbnail:
+              "https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png"
+          },
+          {
+            title: "My secong blog post",
+            thumbnail:
+              "http://www.vmastoryboard.com/wp-content/uploads/2014/08/Amazon-A-Logo.jpg"
+          }
+        ],
+        // lets use html() method to extract the content and .trim() to get rid of white spaces
+        template = $.trim( $('#blogTemplate').html() );
+        // use each method to filter through an element
+
+          // console.log($.each( content, function() {}));
+          $.each(content, function( index, obj){
+            // lets replace with regular expressions i=lower and upper case letters g=global 
+            var temp = template.replace( /{{ title }}/ig, obj.title )
+                .replace(/{{ thumbnail }}/ig, obj.thumbnail );
+            // now let's add it to the page
+            $(document.body).append(temp);
+
+          })
+      })();
+    </script>
+  </body>
+</html>
