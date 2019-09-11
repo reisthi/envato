@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>AJAX: load</title>
+</head>
+
+<body>
+    <div class="container">
+        <h2>Interacting with the Server Side</h2>
+        <form action='#'>
+            <textarea name='content' id='content' cols='30' rows='10'></textarea>
+            <textarea name='content-two' id='content-two' cols='30' rows='10'></textarea>
+            <p><button type='submit'>Save</button></p>
+        </form>
+    </div>
+    <div class="wrap"></div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script>
+        (function () {
+            $('form').on('submit', function (e) {
+                // console.log( $(this).find('#content').val());
+
+                // serialize data
+                console.log($(this).serialize());
+                
+                //
+                $.get('load.php', function(data){
+                    console.log('Data', data);
+                });
+
+
+                // get on php file
+                $.get( 'save.php', $(this).serialize(), function(data) {
+                    console.log('Executed:', data);
+                });
+
+                // disable default action
+                e.preventDefault();
+            });
+        }());
+    </script>
+</body>
+
+</html>
